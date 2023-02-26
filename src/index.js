@@ -73,7 +73,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${PORT}`,
+        url: process.env.swagger_url,
         description: "My API Documentation",
       },
     ],
