@@ -44,11 +44,11 @@ app.use(morgan("combined",{
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-var whitelist = ['https://editor-next.swagger.io', 'http://localhost:4001']
+
 var corsOptions = {
   maxAge:360,
   origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 ||!origin) {
+    if (process.env.whitelist.indexOf(origin) !== -1 ||!origin) {
       callback(null, true)
     } else {
       callback('Not allowed by CORS',false)
