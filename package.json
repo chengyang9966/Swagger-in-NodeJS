@@ -4,11 +4,11 @@
   "description": "",
   "main": "data.js",
   "scripts": {
-    "start:dev": "nodemon --exec babel-node src/index.js -- prod",
+    "start:dev": "nodemon --exec babel-node src/index.js",
     "build-server": "babel -d ./dist ./src -s",
     "clean": "rm -rf dist && mkdir dist",
     "build": "npm run clean && npm run build-server",
-    "start": "npm run build && node dist/index.js",
+    "start": "npm run build && node dist/index.js -- prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
