@@ -8,7 +8,8 @@ import swaggerJsDoc from "swagger-jsdoc";
 import path from 'path';
 import {createStream} from 'rotating-file-stream';
 import allRouter from "./Routes/index";
-import {existsSync } from 'fs'
+import {existsSync } from 'fs';
+import helmet from 'helmet'
 let environment= process.argv.pop()
 let configPath=path.join(__dirname,'..','env','.default.env')
 if(environment){
@@ -44,7 +45,7 @@ app.use(morgan("combined",{
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(helmet())
 var corsOptions = {
   maxAge:360,
   origin: function (origin, callback) {
