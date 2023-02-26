@@ -30,11 +30,11 @@ app.use(morgan('dev', {
 
 
 // // create a rotating write stream
-var accessLogStream = createStream('access.log', {
+var accessLogStream = createStream('console.log', {
   interval: '1d', // rotate daily
   compress: true,
   size: "10M",
-  path: path.join(__dirname,'..', 'log')
+  path: path.join(__dirname,'..', 'logs')
 })
 
 // setup the logger
