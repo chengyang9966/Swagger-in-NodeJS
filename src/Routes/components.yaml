@@ -1,0 +1,112 @@
+
+ components:
+  schemas:
+    Post:
+      type: object
+      required:
+        - userId
+        - title
+        - body
+      properties:
+        id:
+          type: integer
+          description: The Auto-generated id of a post
+        userId:
+          type: integer
+          description: id of author
+        title:
+          type: string
+          description: title of post
+        body:
+          type: string
+      example:
+        id: 1
+        userId: 1
+        title: my title
+        body: my article
+    LoginRespone:
+      type: object
+      required:
+        - message
+        - isValid
+      properties:
+        message:
+          type: string
+          description: Login Response Message
+        isValid:
+          type: boolean
+          description: isValid token
+        signedToken:
+          type: string
+          description: signedToken
+      example:
+        message: Token is signed Successfully
+        isValid: true
+        signedToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNoZW5neWFuZzk5NjZAbWFpbC5jb20iLCJwYXNzd29yZCI6MTIzMjMxMywidXNlcm5hbWUiOiJhc2QyMyIsImlhdCI6MTY3NzI0MTU4N30.NxtH5O0AK79RKGvDrGQ6alo5BUx7aSwIiLzPIGjcYGc
+    AuthFail:
+      type: object
+      required:
+        - message
+        - description
+      properties:
+        message:
+          type: string
+          description: message
+        description:
+          type: string
+          description: description
+      example:
+        message: Authorzation Fail
+        description: Please Provide Auth Token
+    Login:
+      type: object
+      required:
+        - email
+        - password
+        - username
+      properties:
+        email:
+          type: string
+          description: email
+        password:
+          type: string
+          description: password
+        username:
+          type: string
+      example:
+        email: chengyang9966@mail.com
+        password: 1232313
+        username: asd23
+    healthcheckSuccessfully:
+      type: object
+      required:
+        - message
+        - description
+      properties:
+        message:
+          type: string
+          description: Health Check 
+        description:
+          type: string
+          description: Health Check
+      example:
+        message: Health Check 
+        description: Health Check Successfully
+    healthcheckFail:
+      type: object
+      required:
+        - message
+        - description
+      properties:
+        message:
+          type: string
+          description: Health Check 
+        description:
+          type: string
+          description: Health Check 
+      example:
+        message: Health Check 
+        description: Health Check Fail
+
+        
+      
