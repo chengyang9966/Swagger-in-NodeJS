@@ -8,8 +8,17 @@ import swaggerJsDoc from "swagger-jsdoc";
 import path from 'path';
 import {createStream} from 'rotating-file-stream';
 import allRouter from "./Routes/index";
+import {existsSync } from 'fs'
+let environment= process.argv.pop()
+let configPath=path.join(__dirname,'..','env','.default.env')
+if(environment){
+  let newPath=path.join(__dirname,'..','env',`.${environment}.env`);
+  if(existsSync(newPath)){
+    configPath=newPath
+  }
+}
 
-dotenv.config();
+dotenv.config({path:configPath});
 const PORT = process.env.PORT || 4001;
 
 const app = express();
