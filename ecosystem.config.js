@@ -1,7 +1,7 @@
 module.exports = [{
     script: 'npm',
     args:'start',
-    name: 'sales',
+    name: 'Sales X',
     instances: 1,
     out_file: "./logs/out/app.log",
     error_file: "./logs/error/error.log",
